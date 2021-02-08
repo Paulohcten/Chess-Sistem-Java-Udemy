@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println();
         ChessMatch chessMatch = new ChessMatch();
-        while (true){
+        while (!chessMatch.getCheckMate()){
             try {
                 UserInterface.clearScreen();
                 UserInterface.printMatch(chessMatch,captured);
@@ -48,5 +48,7 @@ public class Main {
                 sc.nextLine();
             }
         }
+        UserInterface.clearScreen();
+        UserInterface.printMatch(chessMatch,captured);
     }
 }
