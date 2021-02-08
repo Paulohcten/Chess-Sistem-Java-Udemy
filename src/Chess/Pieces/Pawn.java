@@ -36,18 +36,18 @@ public class Pawn extends ChessPiece {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            //Normal move - 1 position (WHITE piece)
+            //Normal move - 1 tile (WHITE piece)
             p.setValues(position.getRow() - 1, position.getColumn());
             if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            //Special Move - 2 positions (WHITE piece) ***will be implemented later***
-            /*p.setValues(position.getRow() - 2, position.getColumn());
+            //Special Move - 2 tiles (WHITE piece)
+            p.setValues(position.getRow() - 2, position.getColumn());
             Position p2 = new Position(position.getRow() - 1, position.getColumn());
                 if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p) && getBoard().positionExists(p2) && !getBoard().thereIsAPiece(p2) && getMoveCount() == 0) {
                     mat[p.getRow()][p.getColumn()] = true;
-                }*/
+                }
         }
         else {
             //Capture piece left diagonal (BLACK piece)
@@ -62,18 +62,18 @@ public class Pawn extends ChessPiece {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            //Normal move - 1 position (BLACK piece)
+            //Normal move - 1 tile (BLACK piece)
             p.setValues(position.getRow() + 1, position.getColumn());
             if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            //Special Move - 2 positions (BLACK piece) ***will be implemented later***
-            /*p.setValues(position.getRow() + 2, position.getColumn());
-            Position p2 = new Position(position.getRow() - 1, position.getColumn());
+            //Special Move - 2 tiles (BLACK piece)
+            p.setValues(position.getRow() + 2, position.getColumn());
+            Position p2 = new Position(position.getRow() + 1, position.getColumn());
             if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p) && getBoard().positionExists(p2) && !getBoard().thereIsAPiece(p2) && getMoveCount() == 0) {
                 mat[p.getRow()][p.getColumn()] = true;
-            }*/
+            }
         }
         return mat;
     }
